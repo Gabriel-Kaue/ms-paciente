@@ -7,7 +7,7 @@ import org.springframework.web.bind.annotation.RestController
 
 @RestController
 @SpringBootApplication
-class MsUsuarioApplication{
+class MsUsuarioApplication {
     @GetMapping
     fun hello() = "Hello World"
 }

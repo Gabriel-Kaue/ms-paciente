@@ -5,14 +5,14 @@ import br.com.entidade.Usuario
 import br.com.entidade.Endereco
 import jakarta.persistence.EntityManager
 
-class UsuarioMapper(
+class usuarioMapper(
     private val entityManager: EntityManager
-) : Mapper<UsuarioDto, Usuario> {
-    
+) : mapper<UsuarioDto, Usuario> {
+
     override fun fromDomainToEntity(domain: UsuarioDto): Usuario {
         val endereco = entityManager.find(Endereco::class.java, domain.idEndereco)
             ?: throw IllegalArgumentException("Endereço não encontrado para o ID: ${domain.idEndereco}")
-            
+
         return Usuario(
             cpf = domain.cpf,
             nome = domain.nome,
@@ -23,7 +23,7 @@ class UsuarioMapper(
             tipo = domain.tipo
         )
     }
-    
+
     override fun fromEntityToDomain(entity: Usuario): UsuarioDto = UsuarioDto(
         cpf = entity.cpf,
         nome = entity.nome,

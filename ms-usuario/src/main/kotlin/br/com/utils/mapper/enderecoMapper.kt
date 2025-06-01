@@ -1,11 +1,13 @@
 package br.com.utils.mapper
+
 import br.com.dto.EnderecoDto
 import br.com.entidade.Endereco
 import jakarta.persistence.EntityManager
 
-class EnderecoMapper(private val entityManager: EntityManager
-) : Mapper <EnderecoDto, Endereco>{
-    
+class enderecoMapper(
+    private val entityManager: EntityManager
+) : mapper<EnderecoDto, Endereco> {
+
     override fun fromDomainToEntity(domain: EnderecoDto): Endereco {
         return Endereco(
             idEndereco = domain.idEndereco,
@@ -15,7 +17,7 @@ class EnderecoMapper(private val entityManager: EntityManager
             numero = domain.numero
         )
     }
-    
+
     override fun fromEntityToDomain(entity: Endereco): EnderecoDto {
         return EnderecoDto(
             idEndereco = entity.idEndereco,

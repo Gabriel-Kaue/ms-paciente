@@ -5,14 +5,14 @@ import br.com.entidade.Historico
 import br.com.entidade.Usuario
 import jakarta.persistence.EntityManager
 
-class HistoricoMapper(
+class historicoMapper(
     private val entityManager: EntityManager
-) : Mapper<HistoricoDto, Historico> {
-    
+) : mapper<HistoricoDto, Historico> {
+
     override fun fromDomainToEntity(domain: HistoricoDto): Historico {
         val usuario = entityManager.find(Usuario::class.java, domain.cpf)
             ?: throw IllegalArgumentException("Usuário não encontrado para o CPF: ${domain.cpf}")
-            
+
         return Historico(
             idTransacoes = domain.idTransacoes,
             usuario = usuario,

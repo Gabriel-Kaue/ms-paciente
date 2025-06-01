@@ -8,7 +8,7 @@ import jakarta.persistence.ManyToOne
 @Entity
 data class Historico(
     @Id
-    val idTransacoes:Int,
+    val idTransacoes: Int,
     @ManyToOne
     @JoinColumn(name = "cpf", referencedColumnName = "cpf")
     val usuario: Usuario,

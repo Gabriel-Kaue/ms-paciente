@@ -5,14 +5,14 @@ import br.com.entidade.Compra
 import br.com.entidade.Usuario
 import jakarta.persistence.EntityManager
 
-class CompraMapper(
+class compraMapper(
     private val entityManager: EntityManager
-) : Mapper<CompraDto, Compra> {
-    
+) : mapper<CompraDto, Compra> {
+
     override fun fromDomainToEntity(domain: CompraDto): Compra {
         val usuario = entityManager.find(Usuario::class.java, domain.cpf)
             ?: throw IllegalArgumentException("Usuário não encontrado para o CPF: ${domain.cpf}")
-            
+
         return Compra(
             idCompra = domain.idCompra,
             usuario = usuario,
