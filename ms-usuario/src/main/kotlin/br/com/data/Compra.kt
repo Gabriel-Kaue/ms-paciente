@@ -27,7 +27,7 @@ class Compra {
     @Column(name = "qtdPontos", nullable = false)
     var qtdPontos: Int = 0
 
-    @Column(name = "dtCompra", nullable = false)
-    var dtCompra: LocalDateTime? = null
+    @Column(name = "dataCompra", nullable = false)
+    var dataCompra: LocalDateTime? = null
 
 }

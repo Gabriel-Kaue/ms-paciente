@@ -5,12 +5,9 @@ import org.springframework.boot.runApplication
 import org.springframework.web.bind.annotation.GetMapping
 import org.springframework.web.bind.annotation.RestController
 
-@RestController
+
 @SpringBootApplication
-class MsUsuarioApplication {
-    @GetMapping
-    fun hello() = "Hello World"
-}
+class MsUsuarioApplication
 
 fun main(args: Array<String>) {
     runApplication<MsUsuarioApplication>(*args)
