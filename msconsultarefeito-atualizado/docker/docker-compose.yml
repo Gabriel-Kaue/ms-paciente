@@ -1,0 +1,21 @@
+version: '3.8'
+services:
+  ms-consulta:
+    build:
+      context: ..
+      dockerfile: docker/Dockerfile
+    ports:
+      - "8082:8080"
+    container_name: ms-consulta
+    restart: always
+    depends_on:
+      - db
+  db:
+    image: postgres
+    environment:
+      POSTGRES_DB: ms_consulta
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: postgres
+    ports:
+      - "5433:5432"
+    container_name: ms-consulta-db
