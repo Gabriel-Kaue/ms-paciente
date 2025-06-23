@@ -1,0 +1,26 @@
+<div class="card p-4 shadow-sm rounded mb-4">
+  <h3 class="mb-4 text-center text-primary">Lista de Compras de Pontos</h3>
+
+  <div class="table-responsive">
+    <table class="table table-striped align-middle">
+      <thead class="table-primary">
+        <tr>
+          <th>ID</th>
+          <th>Usuário</th> 
+          <th>Quantidade de Pontos</th>
+          <th>Valor (R$)</th>
+          <th>Data da Compra</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let compra of compras">
+          <td>{{ compra.id }}</td>
+          <td>{{ getNomeUsuario(compra.usuario) }}</td>
+          <td>{{ compra.qtdPontos }}</td>
+          <td>{{ compra.valor | currency: 'BRL':'symbol' }}</td>
+          <td>{{ compra.dataCompra | date: 'dd/MM/yyyy HH:mm' }}</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>

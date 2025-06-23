@@ -1,0 +1,108 @@
+/* Container do card geral */
+.card {
+  background-color: #ffffff;
+  border-radius: 12px;
+  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.08);
+  padding: 2rem;
+  margin: 2rem auto;
+  max-width: 90%;
+  overflow-x: auto;
+}
+
+/* Título centralizado */
+h3 {
+  font-size: 1.5rem;
+  font-weight: 600;
+  text-align: center;
+  margin-bottom: 1.5rem;
+  color: #333;
+}
+
+/* Tabela base */
+.table {
+  width: 100%;
+  border-collapse: collapse;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  font-size: 0.95rem;
+  color: #333;
+}
+
+/* Cabeçalho */
+.table thead {
+  background-color: #f5f6fa;
+}
+
+.table thead th {
+  padding: 0.75rem;
+  text-align: left;
+  font-weight: 600;
+  color: #444;
+  border-bottom: 2px solid #e1e5ee;
+}
+
+/* Linhas */
+.table tbody tr {
+  border-bottom: 1px solid #f0f0f0;
+  transition: background-color 0.2s ease;
+}
+
+.table tbody tr:hover {
+  background-color: #f9fbfd;
+}
+
+/* Células */
+.table td {
+  padding: 0.75rem;
+  vertical-align: middle;
+  color: #555;
+}
+
+/* Botão "Editar" */
+.btn-outline-primary {
+  border: 1px solid #5b3cc4;
+  color: #5b3cc4;
+  background-color: transparent;
+  padding: 0.4rem 0.8rem;
+  border-radius: 6px;
+  font-size: 0.875rem;
+  text-decoration: none;
+  transition: all 0.2s ease;
+  display: inline-block;
+}
+
+.btn-outline-primary:hover {
+  background-color: #5b3cc4;
+  color: white;
+}
+
+/* Responsividade para mobile */
+@media (max-width: 768px) {
+  .card {
+    padding: 1rem;
+  }
+
+  .table thead {
+    display: none;
+  }
+
+  .table tr {
+    display: block;
+    margin-bottom: 1rem;
+    border: 1px solid #eee;
+    border-radius: 8px;
+    padding: 0.75rem;
+  }
+
+  .table td {
+    display: flex;
+    justify-content: space-between;
+    padding: 0.5rem 0;
+    font-size: 0.9rem;
+  }
+
+  .table td::before {
+    content: attr(data-label);
+    font-weight: bold;
+    color: #999;
+  }
+}

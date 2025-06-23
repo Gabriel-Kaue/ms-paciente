@@ -1,0 +1,46 @@
+<div class="container mt-4">
+  <h3>Cadastrar Novo Usuário</h3>
+
+  <form (ngSubmit)="criarUsuario()" #formUsuario="ngForm" class="card p-4 shadow-sm">
+
+    <div class="mb-3">
+      <label for="nome" class="form-label">Nome:</label>
+      <input id="nome" [(ngModel)]="usuario.nome" name="nome" required class="form-control" />
+    </div>
+
+    <div class="mb-3">
+      <label for="cpf" class="form-label">CPF:</label>
+      <input id="cpf" [(ngModel)]="usuario.cpf" name="cpf" required class="form-control" />
+    </div>
+
+    <div class="mb-3">
+      <label for="email" class="form-label">Email:</label>
+      <input id="email" type="email" [(ngModel)]="usuario.email" name="email" required class="form-control" />
+    </div>
+
+    <div class="mb-3">
+      <label for="senha" class="form-label">Senha:</label>
+      <input id="senha" type="password" [(ngModel)]="usuario.senha" name="senha" required class="form-control" />
+    </div>
+
+    <div class="mb-3">
+      <label for="endereco" class="form-label">Endereço:</label>
+      <input id="endereco" [(ngModel)]="usuario.endereco" name="endereco" required class="form-control" />
+    </div>
+
+    <div class="mb-3">
+      <label for="saldoPontos" class="form-label">Saldo de Pontos:</label>
+      <input id="saldoPontos" type="number" [(ngModel)]="usuario.saldoPontos" name="saldoPontos" class="form-control" />
+    </div>
+
+    <div class="mb-3">
+      <label for="tipo" class="form-label">Tipo de Usuário:</label>
+      <select id="tipo" [(ngModel)]="usuario.tipo" name="tipo" class="form-select">
+        <option value="PACIENTE">Paciente</option>
+        <option value="MEDICO">Médico</option>
+      </select>
+    </div>
+
+    <button type="submit" class="btn btn-success">Cadastrar</button>
+  </form>
+</div>

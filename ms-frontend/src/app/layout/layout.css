@@ -5,6 +5,5 @@
 }
 
 router-outlet {
-  flex: 1;
-  padding: 16px;
+  display: block;
 }
