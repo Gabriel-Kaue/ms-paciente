@@ -1,0 +1,32 @@
+
+<div class="card p-4 shadow-sm rounded mb-4">
+  <h3 class="mb-4 text-center">Lista de Usuários</h3>
+  <div class="table-responsive">
+    <table class="table table-striped">
+      <thead>
+        <tr>
+          <th>Nome</th>
+          <th>CPF</th>
+          <th>Email</th>
+          <th>Tipo</th>
+          <th>Endereço</th>
+          <th>Saldo de Pontos</th>
+          <th>Ações</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let usuario of usuarios">
+          <td>{{ usuario.nome }}</td>
+          <td>{{ usuario.cpf }}</td>
+          <td>{{ usuario.email }}</td>
+          <td>{{ usuario.tipo }}</td>
+          <td>{{ usuario.endereco }}</td>
+          <td>{{ usuario.saldoPontos }}</td>
+          <td>
+            <a class="btn btn-sm btn-outline-primary" [routerLink]="['/usuario/editar', usuario.id]">Editar</a>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>

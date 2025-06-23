@@ -1,0 +1,27 @@
+<div class="card p-4 shadow-sm rounded mb-4" style="max-width: 500px; margin: 0 auto;">
+  <h3 class="mb-4 text-center text-primary">Registrar Compra de Pontos</h3>
+
+  <form (ngSubmit)="salvar()" #form="ngForm">
+    <div class="mb-3">
+      <label for="usuario" class="form-label">Usuário</label>
+      <select [(ngModel)]="compra.usuario" name="usuario" id="usuario" class="form-select" required>
+        <option [ngValue]="null" disabled selected>Selecione um usuário</option>
+        <option *ngFor="let usuario of usuarios" [ngValue]="usuario.id">{{ usuario.nome }}</option>
+      </select>
+    </div>
+
+    <div class="mb-3">
+      <label for="valor" class="form-label">Valor da Compra (R$)</label>
+      <input type="number" [(ngModel)]="compra.valor" name="valor" id="valor" class="form-control" required min="0.01" step="0.01">
+    </div>
+
+    <div class="mb-3">
+      <label for="qtdPontos" class="form-label">Quantidade de Pontos</label>
+      <input type="number" [(ngModel)]="compra.qtdPontos" name="qtdPontos" id="qtdPontos" class="form-control" required min="1">
+    </div>
+
+    <button type="submit" class="btn btn-primary w-100 mt-3" [disabled]="form.invalid">
+      Registrar Compra
+    </button>
+  </form>
+</div>

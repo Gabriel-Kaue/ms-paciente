@@ -6,9 +6,10 @@ import { RouterModule } from '@angular/router';
 
 @Component({
   selector: 'app-layout',
-  imports: [Navbar,Footer,RouterModule],
+  imports: [Navbar, Footer, RouterModule],
   templateUrl: './layout.html',
-  styleUrl: './layout.css'
+  styleUrls: ['./layout.css'],
+  standalone: true,
 })
 export class Layout {
 
